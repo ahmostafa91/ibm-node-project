@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 let books = require("./booksdb.js");
 const regd_users = express.Router();
 
-let users = [{"username":"dennis","password":"abc"}];
+let users = [{"username":"testUser","password":"12345"}];
 
 const isValid = (username)=>{ //returns boolean
 //write code to check is the username is valid
@@ -46,7 +46,7 @@ regd_users.post("/login", (req,res) => {
 
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
-  //Write your code here
+  
     const isbn = req.params.isbn;
     const review = req.body.review;
     const username = req.session.authorization.username;

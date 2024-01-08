@@ -15,7 +15,7 @@ const doesExist = (username)=>{
   }
 }
 
-
+/// register new user
 public_users.post("/register", (req,res) => {
   //Write your code here
   const username = req.body.username;
@@ -72,6 +72,7 @@ public_users.get('/title/:title',function (req, res) {
   for(const [key, values] of Object.entries(books)){
       const book = Object.entries(values);
       for(let i = 0; i < book.length ; i++){
+        console.log('book[i][1]', book[i][1])
           if(book[i][0] == 'title' && book[i][1] == req.params.title){
               ans.push(books[key]);
           }
